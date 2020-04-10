@@ -19,7 +19,7 @@ def login(request):
             return redirect("/") 
         else:
             messages.info(request,'User Not Found')
-            return redirect("login")
+            return redirect("/")
     else:
         return render(request,"index.html")
 
