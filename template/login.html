@@ -39,7 +39,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input mb-5" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -55,6 +55,11 @@
 						</a>
 					</div>
 				</form>
+			</div>
+			<div>
+				{% for message in messages %} 
+				<h3> {{message}} </h3> 
+				{% endfor %}
 			</div>
 		</div>
 	</div>
