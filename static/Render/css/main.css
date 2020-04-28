@@ -327,7 +327,6 @@ iframe {
   color: #555555;
 }
 
-
 /*[ Button ]*/
 .container-login100-form-btn {
   width: 100%;
@@ -460,4 +459,8 @@ iframe {
     visibility: visible;
     opacity: 1;
   }
+}
+.message{
+  padding-left: 60px;
+  padding-bottom: 15px; 
 }

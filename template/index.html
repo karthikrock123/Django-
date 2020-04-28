@@ -7,17 +7,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Gitam_Glug</title>
-  <link href="{% static 'Render/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link href="{% static 'Render/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
-  <link href="{% static 'Render/css/creative.min.css'%}" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'Render/fontawesome-free/css/all.min.css'%}">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700">
+  <link rel="stylesheet" type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'>
+  <link rel="stylesheet" type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'Render/css/sty.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Render/magnific-popup/magnific-popup.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'Render/css/creative.min.css'%}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="shortcut icon" href="{% static 'Render/img/glug.ico'%}">
-  <link href="{% static 'Render/css/sty.css'%}" rel="stylesheet">
-
 <body id="page-top">
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
@@ -47,11 +46,11 @@
     </div>
     {% if user.is_authenticated %}
     <div class="nav-item">
-      <a type="button" class="btn btn-outline-info" href="accounts/logout">logout</a>
+      <a type="button" class="btn btn-outline-info mr-4" href="accounts/logout">logout</a>
     </div>
     {% else %}
     <div class="nav-item">
-      <a type="button" class="btn btn-outline-info" href="accounts/login">login</a>
+      <a type="button" class="btn btn-outline-info mr-4" href="accounts/login">login</a>
     </div>
     {% endif %}
   </nav>
@@ -84,20 +83,20 @@
       </div>
     </div>
   </section>
-  <section   class="page-section " id="services">
-    <div     class="container">
-      <h2    class="text-center">Running Projects</h2>
-      <hr    class="divider my-4">
-      <div   class="row">
+  <section class="page-section " id="services">
+    <div class="container">
+      <h2 class="text-center">Running Projects</h2>
+      <hr class="divider my-4">
+      <div class="row">
         {% csrf_token %}
         {% for project in projects %}
         <div class="col-lg-3 col-md-4 ml-5 mr-4 my-5 text-center card shadow hover-effect animation-target">
-          <div  class="mt-5">
-            <i  class="fas fa-4x fa-{{project.icon}} text-info mb-4"></i>
+          <div class="mt-5">
+            <i class="fas fa-4x fa-{{project.icon}} text-info mb-4"></i>
             <h3 class="h4 mb-4 card-title">{{project.name}}</h3>
-            <p  class="text-muted mb-3 card-body">{{project.description}}</p>
-            <a  class="btn btn-outline-info" href="#">Read More</a>
-            <p  class="text-muted mb-0 card-body"></p>
+            <p class="text-muted mb-3 card-body">{{project.description}}</p>
+            <a class="btn btn-outline-info" href="#">Read More</a>
+            <p class="text-muted mb-0 card-body"></p>
             </div>
         </div>
         {% endfor %}

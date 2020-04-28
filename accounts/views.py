@@ -12,10 +12,9 @@ def login_request(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.info(request, f"You are now logged in as {username}")
-            return redirect("/")
+            return redirect("project_page")
         else:
-            messages.error(request, "Invalid username or password.")
+            messages.error(request, "Invalid user")
             return redirect("login")
     else:
         return render(request,"login.html")
@@ -23,3 +22,6 @@ def login_request(request):
 def logout_request(request):
     auth.logout(request)
     return redirect("/")
+
+def project_request(request):
+    return render(request,"project_page.html")
