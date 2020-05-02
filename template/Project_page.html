@@ -64,7 +64,7 @@
                     <div class="user-description" style="overflow: hidden;">
                         <div class="content text-white">
                             <h2>{{request.user.username}}</h2>
-                            <h6>Project Manager of GLUG</h6>
+                            <h6>Project Manager</h6>
                             <p>GITAM University</p>
                         </div>
                     </div>
@@ -77,27 +77,16 @@
             <h2 class="desp text-center">Your Projects</h2>
             <hr class="divider my-4">
             <div class="row">
-                <div class="col-lg-3 col-md-4 ml-5 mr-4 text-center">
+                {% for v in ps %}
+                <div class="col-lg-3 col-md-4 ml-5 mb-5 mr-4 text-center card shadow hover-effect animation-target">
                     <div class="mt-5">
-                        <h3 class="h4 mb-4 card-title"> Web Development</h3>
-                        <p  class="text-muted mb-3 card-body">Developing web projects with ease</p>
-                        <a  class="btn btn-outline-info" href="#">View More</a>
+                        <i class="fas fa-4x fa-{{v.values.get.icon}} mt-2 text-info mb-4"></i>
+                        <h3 class="h4 mb-4 card-title">{{v.values.get.name}}</h3>
+                        <p  class="text-muted mb-4 card-body">{{v.values.get.description}}</p>
+                        <a  class="btn btn-outline-info mb-4" href="#">View More</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 ml-5 mr-4 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-4 card-title">App development</h3>
-                        <p  class="text-muted mb-3 card-body">Android App development with gradle and flutter</p>
-                        <a  class="btn btn-outline-info" href="#">View More</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 ml-5 mr-4 text-center">
-                    <div class="mt-5">
-                        <h3 class="h4 mb-4 card-title">Door lock</h3>
-                        <p  class="text-muted mb-3 card-body">make your belongs more Secure</p>
-                        <a  class="btn btn-outline-info" href="#">View More</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
