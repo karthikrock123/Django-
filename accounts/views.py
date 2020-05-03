@@ -45,3 +45,4 @@ def project_request(request):
                 ps.append(p.values('name'))
             print(ps)
         return render(request,"project_page.html",{'ps':ps})
+    
