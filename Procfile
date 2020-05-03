@@ -1,0 +1,1 @@
+web: gunicorn GLUGWebsite.wsgi
