@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h9l!jhzwff6rijkg!)0(w02z_$dw3%s%5k6o9-2xf!g7r$_kc8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,10 +83,13 @@ DATABASES = {
         'NAME'    : 'GLUGWebsite',
         'USER'    : 'postgres',
         'PASSWORD': '1234',
-        'HOST'    : 'localhost' 
+        'HOST'    : 'localhost',
+        'PORT'    : '5432' 
     }
 }
-
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
