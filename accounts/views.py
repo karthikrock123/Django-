@@ -44,5 +44,5 @@ def project_request(request):
                 p = Project.objects.filter(id = i)
                 ps.append(p.values('name'))
             print(ps)
-        return render(request,"project_page.html",{'ps':ps})
+        return render(request,"Project_page.html",{'ps':ps})
     
