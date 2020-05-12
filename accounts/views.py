@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import login,logout,authenticate
 from django.db.models.query import QuerySet
-from .models import listOfProject
+from .models import listOfProject,Milestone
 from GLUG.models import Project
 # Create your views here.
 
@@ -27,8 +27,8 @@ def logout_request(request):
 
 def project_request(request):
     pop=[];cs=[];ps=[]
-    if User.is_authenticated: 
-        a = request.user.id 
+    if User.is_authenticated:
+        a = request.user.id
         if(listOfProject.objects.filter(name_id=a)):
             u = listOfProject.objects.filter(name = a)
             us = u.values('projects')
@@ -45,4 +45,8 @@ def project_request(request):
                 ps.append(p.values('name'))
             print(ps)
         return render(request,"Project_page.html",{'ps':ps})
-    
+
+
+def milestoneobjects(request):
+    milestones = Milestone.objects.all();
+    return render(request,"project_details.html", {"milestones":milestones})
